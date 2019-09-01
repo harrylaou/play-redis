@@ -15,7 +15,7 @@ scalaVersion := "2.13.0"
 
 crossScalaVersions := Seq( "2.11.12", "2.12.9", scalaVersion.value )
 
-playVersion := "2.7.0"
+playVersion := "2.7.3"
 
 connectorVersion := "1.9.1"
 
