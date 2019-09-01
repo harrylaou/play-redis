@@ -11,21 +11,21 @@ description := "Redis cache plugin for the Play framework 2"
 
 organization := "com.github.karelcemus"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.0"
 
-crossScalaVersions := Seq( "2.11.12", scalaVersion.value )
+crossScalaVersions := Seq( "2.11.12", "2.12.9", scalaVersion.value )
 
 playVersion := "2.7.0"
 
-connectorVersion := "1.8.4"
+connectorVersion := "1.9.1"
 
-specs2Version := "4.4.1"
+specs2Version := "4.7.0"
 
 libraryDependencies ++= Seq(
   // play framework cache API
   "com.typesafe.play" %% "play-cache" % playVersion.value % Provided,
   // redis connector
-  "com.github.Ma27" %% "rediscala" % connectorVersion.value,
+  "com.github.karelcemus" %% "rediscala" % connectorVersion.value,
   // test framework
   "org.specs2" %% "specs2-core" % specs2Version.value % Test,
   // with mockito extension

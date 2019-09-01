@@ -1,6 +1,7 @@
 package play.api.cache.redis.configuration
 
-import scala.collection.JavaConverters._
+import play.api.cache.redis.JavaCompatibilityBase
+
 import com.typesafe.config.{Config, ConfigOrigin}
 
 trait RedisInstanceResolver {
@@ -90,6 +91,7 @@ private[configuration] object RedisInstanceStandalone extends RedisConfigInstanc
   * Statically configured redis cluster
   */
 private[configuration] object RedisInstanceCluster extends RedisConfigInstanceLoader[RedisInstanceProvider] {
+  import JavaCompatibilityBase._
   import RedisConfigLoader._
 
   def load(config: Config, path: String, instanceName: String)(implicit defaults: RedisSettings) = new ResolvedRedisInstance(
@@ -121,6 +123,7 @@ private[configuration] object RedisInstanceEnvironmental extends RedisConfigInst
   * Statically configures redis sentinel
   */
 private[configuration] object RedisInstanceSentinel extends RedisConfigInstanceLoader[RedisInstanceProvider] {
+  import JavaCompatibilityBase._
   import RedisConfigLoader._
 
   def load(config: Config, path: String, instanceName: String)(implicit defaults: RedisSettings) = new ResolvedRedisInstance(

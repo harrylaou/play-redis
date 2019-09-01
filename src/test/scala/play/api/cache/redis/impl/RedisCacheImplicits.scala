@@ -63,7 +63,7 @@ object RedisCacheImplicits {
 
   class MockedList extends MockedCache {
     protected val data = new mutable.ListBuffer[String]
-    data.append(other, value, value)
+    data.appendAll(Iterable(other, value, value))
 
     protected val list = cache.list[String]("key")
   }
